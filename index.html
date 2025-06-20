@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Maze Escape Game</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to external CSS file -->
+  </head>
+  <body>
+    <div id="overlay">
+      <h1>3D Maze Escape</h1>
+      <button id="start-button">Start Game</button>
+      <div id="instructions">
+        <p>
+          Click "Start Game" to begin. Use WASD to move, and the mouse to look
+          around.
+        </p>
+        <p>
+          Find your way through the procedurally generated maze to the
+          <span style="color: gold">GOLD EXIT</span>!
+        </p>
+        <p>
+          Press ESC to release mouse control. Press 'C' to toggle camera view.
+          Press 'R' to restart.
+        </p>
+        <p>
+          Mobile users: Use the on-screen joysticks to move and look around.
+        </p>
+      </div>
+    </div>
+
+    <div id="ui">
+      <h2>Maze Escape</h2>
+      <p>Find the <span style="color: gold">GOLD EXIT</span>!</p>
+      <p>WASD: Move | C: Toggle Camera | R: Reset</p>
+    </div>
+    <div id="minimap"></div>
+    <div id="mobile-controls">
+      <div id="joystick-left" class="joystick">
+        <div class="joystick-stick"></div>
+      </div>
+      <div id="joystick-right" class="joystick">
+        <div class="joystick-stick"></div>
+      </div>
+    </div>
+
+    <div id="message-box">
+      <p id="message-text"></p>
+      <button onclick="hideMessageBox()">OK</button>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- Game-specific JavaScript files -->
+    <script src="js/ui.js"></script>
+    <script src="js/minimap.js"></script>
+    <script src="js/lighting.js"></script>
+    <script src="js/maze.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Main script should be loaded last -->
+  </body>
+</html>
